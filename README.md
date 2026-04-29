@@ -48,17 +48,19 @@ git clone https://github.com/gustavoantunes07/flow-provider.git
 
 ### 3. Configure your token
 
-```bash
-cp index.example.ts index.ts
+Open or create `~/.pi/agent/settings.json` and add your JWT under `env`:
+
+```json
+{
+  "env": {
+    "FLOW_JWT_TOKEN": "your-jwt-here"
+  }
+}
 ```
 
-Open `index.ts` and replace `"jwt-token"` with your JWT:
+> ⚠️ **Never share or commit your JWT.** It contains your personal Flow credentials.
 
-```typescript
-apiKey: "jwt-token",
-```
-
-> ⚠️ **Never commit your `index.ts`.** It contains your personal JWT and is listed in `.gitignore`.
+> **Note for Windows users:** The pi agent may not inject `env` variables from `settings.json` into extensions automatically. The extension handles this by reading `settings.json` directly, so the setup above works on all platforms.
 
 ### 4. Run pi
 
