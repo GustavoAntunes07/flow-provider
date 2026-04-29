@@ -1,12 +1,24 @@
 import type { ExtensionAPI } from "@mariozechner/pi-coding-agent";
+	import { readFileSync } from "fs";
+	import { join } from "path";
 
-export default function (pi: ExtensionAPI) {
-	const flowJwtToken = process.env.FLOW_JWT_TOKEN;
+	export default function (pi: ExtensionAPI) {
+	let flowJwtToken = process.env.FLOW_JWT_TOKEN;
 
 	if (!flowJwtToken) {
-		throw new Error("Missing FLOW_JWT_TOKEN environment variable");
+		try {
+		const settingsPath = join(process.env.USERPROFILE || process.env.HOME || "", ".pi", "agent", "settings.json");
+		const settings = JSON.parse(readFileSync(settingsPath, "utf8"));
+		flowJwtToken = settings?.env?.FLOW_JWT_TOKEN;
+		} catch {
+		// settings.json não encontrado ou sem permissão
+		}
 	}
 
+	if (!flowJwtToken) {
+		throw new Error("Missing FLOW_JWT_TOKEN. Set it in ~/.pi/agent/settings.json under 'env'.");
+	}
+	
 	pi.registerProvider("ciandt-flow", {
 		baseUrl: "https://flow.ciandt.com/flow-llm-proxy",
 		apiKey: flowJwtToken,
