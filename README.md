@@ -52,10 +52,10 @@ git clone https://github.com/gustavoantunes07/flow-provider.git
 cp index.example.ts index.ts
 ```
 
-Open `index.ts` and replace `"your-jwt-here"` with your JWT:
+Open `index.ts` and replace `"jwt-token"` with your JWT:
 
 ```typescript
-apiKey: "your-jwt-here",
+apiKey: "jwt-token",
 ```
 
 > ⚠️ **Never commit your `index.ts`.** It contains your personal JWT and is listed in `.gitignore`.
@@ -74,7 +74,17 @@ Type `/model`, search for **Flow**, select a model and you're good to go.
 |---|---|
 | anthropic.claude-4-6-sonnet | Anthropic |
 | anthropic.claude-4-5-sonnet | Anthropic |
-| ... | ... |
+| anthropic.claude-4-sonnet | Anthropic |
+| gpt-4o-mini | OpenAI |
+| gpt-4.1 | OpenAI |
+| gpt-5 | OpenAI |
+| gpt-5-mini | OpenAI |
+| gpt-5-nano | OpenAI |
+| gpt-o1 | OpenAI |
+| gpt-o3-mini | OpenAI |
+| gemini-2.5-flash | Google |
+| gemini-2.5-pro | Google |
+| grok-3 | xAI |
 
 ## Troubleshooting
 
