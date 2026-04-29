@@ -15,20 +15,24 @@ Extension for the [pi coding agent](https://pi.dev) to use the CI&T Flow LLM pro
 2. Generate a new API key and save the **client ID**, **client secret**, and **tenant** — you won't be able to see them again after closing the modal
 3. Go to [jwt.io](https://jwt.io) → **JWT Encoder**
 4. Set the header:
+
 ```json
-   {
-     "alg": "HS256",
-     "typ": "JWT"
-   }
+{
+  "alg": "HS256",
+  "typ": "JWT"
+}
 ```
+
 5. Set the payload (replace with your values):
+
 ```json
-   {
-     "clientId": "<your-client-id>",
-     "clientSecret": "<your-client-secret>",
-     "tenant": "<your-tenant>"
-   }
+{
+  "clientId": "<your-client-id>",
+  "clientSecret": "<your-client-secret>",
+  "tenant": "<your-tenant>"
+}
 ```
+
 6. Copy the generated JWT and keep it saved
 
 ### 2. Install the extension
@@ -72,21 +76,21 @@ Type `/model`, search for **Flow**, select a model and you're good to go.
 
 ## Available models
 
-| Model | Provider |
-|---|---|
+| Model                       | Provider  |
+| --------------------------- | --------- |
 | anthropic.claude-4-6-sonnet | Anthropic |
 | anthropic.claude-4-5-sonnet | Anthropic |
-| anthropic.claude-4-sonnet | Anthropic |
-| gpt-4o-mini | OpenAI |
-| gpt-4.1 | OpenAI |
-| gpt-5 | OpenAI |
-| gpt-5-mini | OpenAI |
-| gpt-5-nano | OpenAI |
-| gpt-o1 | OpenAI |
-| gpt-o3-mini | OpenAI |
-| gemini-2.5-flash | Google |
-| gemini-2.5-pro | Google |
-| grok-3 | xAI |
+| anthropic.claude-4-sonnet   | Anthropic |
+| gpt-4o-mini                 | OpenAI    |
+| gpt-4.1                     | OpenAI    |
+| gpt-5                       | OpenAI    |
+| gpt-5-mini                  | OpenAI    |
+| gpt-5-nano                  | OpenAI    |
+| gpt-o1                      | OpenAI    |
+| gpt-o3-mini                 | OpenAI    |
+| gemini-2.5-flash            | Google    |
+| gemini-2.5-pro              | Google    |
+| grok-3                      | xAI       |
 
 ## Troubleshooting
 
