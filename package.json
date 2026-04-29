@@ -1,0 +1,9 @@
+{
+  "name": "pi-provider-flow",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "index.ts",
+  "devDependencies": {
+    "@mariozechner/pi-coding-agent": "^0.70.6"
+  }
+}
