@@ -4,6 +4,7 @@ export default function (pi: ExtensionAPI) {
   pi.registerProvider("ciandt-flow", {
     baseUrl: "https://flow.ciandt.com/flow-llm-proxy",
     apiKey: "jwt-token", // The API key is expected to be a JWT token for authentication with the CI&T Flow LLM Proxy.
+    authHeader: true,
     api: "anthropic-messages",
     models: [
   // ─── Anthropic ───────────────────────────────────────────
