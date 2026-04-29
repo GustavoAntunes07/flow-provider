@@ -4,6 +4,11 @@
   "type": "module",
   "main": "index.ts",
   "devDependencies": {
-    "@mariozechner/pi-coding-agent": "^0.70.6"
+    "@mariozechner/pi-coding-agent": "^0.70.6",
+    "@types/node": "^25.6.0",
+    "skills": "^1.5.3"
+  },
+  "scripts": {
+    "skills:sync": "skills update -y"
   }
 }

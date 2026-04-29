@@ -1,3 +1,6 @@
 node_modules
 
-index.ts
+.pi-lens
+.agents
+.claude
+.pi
