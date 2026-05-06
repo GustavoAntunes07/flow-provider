@@ -16,7 +16,7 @@ export default function (pi: ExtensionAPI) {
       const settings = JSON.parse(readFileSync(settingsPath, "utf8"));
       flowJwtToken = settings?.env?.FLOW_JWT_TOKEN;
     } catch {
-      // settings.json não encontrado ou sem permissão
+      // settings.json not found
     }
   }
 
@@ -32,8 +32,35 @@ export default function (pi: ExtensionAPI) {
     models: [
       // ─── Anthropic ───────────────────────────────────────────
       {
-        id: "anthropic.claude-4-sonnet",
-        name: "Claude 4 Sonnet (CI&T - Flow)",
+        id: "anthropic.claude-4-7-opus",
+        name: "Claude 4.7 Opus (CI&T - Flow)",
+        reasoning: true,
+        input: ["text", "image"],
+        cost: { input: 0, output: 0, cacheRead: 0, cacheWrite: 0 },
+        contextWindow: 200000,
+        maxTokens: 16000,
+      },
+      {
+        id: "anthropic.claude-4-6-opus",
+        name: "Claude 4.6 Opus (CI&T - Flow)",
+        reasoning: true,
+        input: ["text", "image"],
+        cost: { input: 0, output: 0, cacheRead: 0, cacheWrite: 0 },
+        contextWindow: 200000,
+        maxTokens: 16000,
+      },
+      {
+        id: "anthropic.claude-4-5-opus",
+        name: "Claude 4.5 Opus (CI&T - Flow)",
+        reasoning: false,
+        input: ["text", "image"],
+        cost: { input: 0, output: 0, cacheRead: 0, cacheWrite: 0 },
+        contextWindow: 200000,
+        maxTokens: 16000,
+      },
+      {
+        id: "anthropic.claude-4-6-sonnet",
+        name: "Claude Sonnet 4.6 (CI&T - Flow)",
         reasoning: false,
         input: ["text", "image"],
         cost: { input: 0, output: 0, cacheRead: 0, cacheWrite: 0 },
@@ -50,28 +77,28 @@ export default function (pi: ExtensionAPI) {
         maxTokens: 16000,
       },
       {
-        id: "anthropic.claude-4-6-sonnet",
-        name: "Claude Sonnet 4.6 (CI&T - Flow)",
+        id: "anthropic.claude-4-5-haiku",
+        name: "Claude 4.5 Haiku (CI&T - Flow)",
         reasoning: false,
         input: ["text", "image"],
         cost: { input: 0, output: 0, cacheRead: 0, cacheWrite: 0 },
         contextWindow: 200000,
-        maxTokens: 16000,
+        maxTokens: 8192,
       },
 
       // ─── OpenAI ──────────────────────────────────────────────
       {
-        id: "gpt-4o-mini",
-        name: "GPT-4o Mini (CI&T - Flow)",
+        id: "gpt-5-2",
+        name: "GPT-5.2 (CI&T - Flow)",
         reasoning: false,
         input: ["text", "image"],
         cost: { input: 0, output: 0, cacheRead: 0, cacheWrite: 0 },
-        contextWindow: 128000,
-        maxTokens: 16384,
+        contextWindow: 1000000,
+        maxTokens: 32768,
       },
       {
-        id: "gpt-4.1",
-        name: "GPT-4.1 (CI&T - Flow)",
+        id: "gpt-5-1",
+        name: "GPT-5.1 (CI&T - Flow)",
         reasoning: false,
         input: ["text", "image"],
         cost: { input: 0, output: 0, cacheRead: 0, cacheWrite: 0 },
@@ -105,6 +132,24 @@ export default function (pi: ExtensionAPI) {
         contextWindow: 128000,
         maxTokens: 8192,
       },
+      {
+        id: "gpt-4.1",
+        name: "GPT-4.1 (CI&T - Flow)",
+        reasoning: false,
+        input: ["text", "image"],
+        cost: { input: 0, output: 0, cacheRead: 0, cacheWrite: 0 },
+        contextWindow: 1000000,
+        maxTokens: 32768,
+      },
+      {
+        id: "gpt-4o-mini",
+        name: "GPT-4o Mini (CI&T - Flow)",
+        reasoning: false,
+        input: ["text", "image"],
+        cost: { input: 0, output: 0, cacheRead: 0, cacheWrite: 0 },
+        contextWindow: 128000,
+        maxTokens: 16384,
+      },
 
       // ─── OpenAI Reasoning ────────────────────────────────────
       {
@@ -128,8 +173,8 @@ export default function (pi: ExtensionAPI) {
 
       // ─── Google ──────────────────────────────────────────────
       {
-        id: "gemini-2.5-flash",
-        name: "Gemini 2.5 Flash (CI&T - Flow)",
+        id: "gemini-3.1-pro",
+        name: "Gemini 3.1 Pro (CI&T - Flow)",
         reasoning: true,
         input: ["text", "image"],
         cost: { input: 0, output: 0, cacheRead: 0, cacheWrite: 0 },
@@ -145,16 +190,23 @@ export default function (pi: ExtensionAPI) {
         contextWindow: 1000000,
         maxTokens: 65536,
       },
-
-      // ─── xAI ─────────────────────────────────────────────────
       {
-        id: "grok-3",
-        name: "Grok 3 (CI&T - Flow)",
+        id: "gemini-2.5-flash",
+        name: "Gemini 2.5 Flash (CI&T - Flow)",
+        reasoning: true,
+        input: ["text", "image"],
+        cost: { input: 0, output: 0, cacheRead: 0, cacheWrite: 0 },
+        contextWindow: 1000000,
+        maxTokens: 65536,
+      },
+      {
+        id: "gemini-2.0-flash",
+        name: "Gemini 2.0 Flash (CI&T - Flow)",
         reasoning: false,
         input: ["text", "image"],
         cost: { input: 0, output: 0, cacheRead: 0, cacheWrite: 0 },
-        contextWindow: 131072,
-        maxTokens: 16384,
+        contextWindow: 1000000,
+        maxTokens: 8192,
       },
     ],
   });
