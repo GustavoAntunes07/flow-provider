@@ -77,26 +77,8 @@ export default function (pi: ExtensionAPI) {
         maxTokens: 16000,
       },
       {
-        id: "anthropic.claude-4-sonnet",
-        name: "Claude 4 Sonnet (CI&T - Flow)",
-        reasoning: false,
-        input: ["text", "image"],
-        cost: { input: 0, output: 0, cacheRead: 0, cacheWrite: 0 },
-        contextWindow: 200000,
-        maxTokens: 16000,
-      },
-      {
         id: "anthropic.claude-4-5-haiku",
         name: "Claude 4.5 Haiku (CI&T - Flow)",
-        reasoning: false,
-        input: ["text", "image"],
-        cost: { input: 0, output: 0, cacheRead: 0, cacheWrite: 0 },
-        contextWindow: 200000,
-        maxTokens: 8192,
-      },
-      {
-        id: "anthropic.claude-3-5-haiku",
-        name: "Claude 3.5 Haiku (CI&T - Flow)",
         reasoning: false,
         input: ["text", "image"],
         cost: { input: 0, output: 0, cacheRead: 0, cacheWrite: 0 },
@@ -133,15 +115,6 @@ export default function (pi: ExtensionAPI) {
         maxTokens: 32768,
       },
       {
-        id: "gpt-5-codex",
-        name: "GPT-5 Codex (CI&T - Flow)",
-        reasoning: false,
-        input: ["text"],
-        cost: { input: 0, output: 0, cacheRead: 0, cacheWrite: 0 },
-        contextWindow: 1000000,
-        maxTokens: 32768,
-      },
-      {
         id: "gpt-5-mini",
         name: "GPT-5 Mini (CI&T - Flow)",
         reasoning: false,
@@ -167,15 +140,6 @@ export default function (pi: ExtensionAPI) {
         cost: { input: 0, output: 0, cacheRead: 0, cacheWrite: 0 },
         contextWindow: 1000000,
         maxTokens: 32768,
-      },
-      {
-        id: "gpt-4o",
-        name: "GPT-4o (CI&T - Flow)",
-        reasoning: false,
-        input: ["text", "image"],
-        cost: { input: 0, output: 0, cacheRead: 0, cacheWrite: 0 },
-        contextWindow: 128000,
-        maxTokens: 16384,
       },
       {
         id: "gpt-4o-mini",
@@ -243,39 +207,6 @@ export default function (pi: ExtensionAPI) {
         cost: { input: 0, output: 0, cacheRead: 0, cacheWrite: 0 },
         contextWindow: 1000000,
         maxTokens: 8192,
-      },
-
-      // ─── DeepSeek ────────────────────────────────────────────
-      {
-        id: "deepseek-r1",
-        name: "DeepSeek R1 (CI&T - Flow)",
-        reasoning: true,
-        input: ["text"],
-        cost: { input: 0, output: 0, cacheRead: 0, cacheWrite: 0 },
-        contextWindow: 128000,
-        maxTokens: 32768,
-      },
-
-      // ─── Mistral ─────────────────────────────────────────────
-      {
-        id: "mistral-small-2503",
-        name: "Mistral Small (CI&T - Flow)",
-        reasoning: false,
-        input: ["text"],
-        cost: { input: 0, output: 0, cacheRead: 0, cacheWrite: 0 },
-        contextWindow: 32000,
-        maxTokens: 8192,
-      },
-
-      // ─── xAI ─────────────────────────────────────────────────
-      {
-        id: "grok-3",
-        name: "Grok 3 (CI&T - Flow)",
-        reasoning: false,
-        input: ["text", "image"],
-        cost: { input: 0, output: 0, cacheRead: 0, cacheWrite: 0 },
-        contextWindow: 131072,
-        maxTokens: 16384,
       },
     ],
   });
